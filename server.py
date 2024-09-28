@@ -7,7 +7,6 @@ st.write("Hello World")
 img = st.file_uploader("Please upload an Image file", type=["jpg", "png"])
 if img:
     img_data = img.getvalue()
-    print(img_data)
     b64 = base64.b64encode(img_data).decode("utf-8")
     class_data = util.classify_image(b64)
     if len(class_data) == 0:
